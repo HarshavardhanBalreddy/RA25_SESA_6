@@ -1,9 +1,17 @@
+//This is the program to keep the lora in always reception mode until or unless the message is recevied, once the message is received it uploads the message in to the webpage or the server by making a 
+//hhtp request using "cURL". Once the message is uploaded it sends the acknowledgement to the sender. This program also ignores the message and only receives if the message different.
+
+
+//importing the libraries
+//Note: all the libraries used are either open source or inbuilt
+
 #include "LoRa.h"
 #include "WString.h"
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
 
+//initialising pins for lora
 const int csPin = 8;          // LoRa radio chip select
 const int resetPin = 22;       // LoRa radio reset
 const int irqPin = 4;         // change for your board; must be a hardware interrupt pin
@@ -22,6 +30,7 @@ char final_string[200];
 String prev_incoming = " ";
 String curr_incoming = " ";
 
+//function to send the message
 void sendMessage(String outgoing) {
 	LoRa.beginPacket();                   // start packet
 	LoRa.write(destination);              // add destination address
@@ -33,7 +42,7 @@ void sendMessage(String outgoing) {
 	msgCount++;                           // increment message ID
 }
 
-
+//function to recieve the message if there's data in the buffer
 void onReceive(int packetSize) {
 	if (packetSize == 0) return;          // if there's no packet, return
 
@@ -74,10 +83,6 @@ void onReceive(int packetSize) {
 		String message = "Data recieved succesfully my data is as follows";   // send a message
 		sendMessage(message);
 		cout << "Sending " << message << endl;
-		//lastSendTime = millis();            // timestamp the message
-		//interval = (rand() % 2000) + 1000;    // 1-3 seconds
-		//yet to add verificartion of insert record from curl
-		//calling a system function to invoke curl and make a http request to update data in the server
 		String final_Command=String("curl -o test.txt \"http://sesa6care.000webhostapp.com/sesa6care/api/?msmessage="+curr_incoming+"\"");
 		cout << "Final http resquest ready to be requested: " << final_Command << endl;
 		//converting string to character array
@@ -91,6 +96,7 @@ void onReceive(int packetSize) {
 			exit(1);
 		}
 		char ver[100];
+		//reading only characters from the file to print out the message from the server
 		system("grep \"[A-Za-z]\" test.txt > final.txt");
 		FILE *fin_file = fopen("final.txt","r");
 		fscanf(fin_file, "%[^\n]", ver);
@@ -100,6 +106,7 @@ void onReceive(int packetSize) {
 		fclose(fin_file);
 	}
 	else{
+		//igonoring the message that is already received
 		prev_incoming = curr_incoming;
 		curr_incoming = incoming;
 		if (curr_incoming == prev_incoming){
@@ -110,7 +117,6 @@ void onReceive(int packetSize) {
 
 
 void setup() {
-
 	printf("LoRa Duplex\n");
 	// override the default CS, reset, and IRQ pins (optional)
 	LoRa.setPins(csPin, resetPin, irqPin);   // set CS, reset, IRQ pin
@@ -126,21 +132,13 @@ void setup() {
 }
 
 void loop() {
-	// parse for a packet, and call onReceive with the result:
+	//continuously receive and upload the data to the server, and send back the acknowledgement to the sender
 	onReceive(LoRa.parsePacket());
-	//storing the response in a file and printing out the status
-	/*FILE *file = fopen("test.txt","r");*/
-	//if(file == NULL){
-	//printf("\nFailed to open the file");
-	//exit(1);
-	//}
-	//char ver[15];
-	//fscanf(file, "%[^\n]", ver);
-	//printf("Status:\n%s", ver);
-	/*fclose(file);*/
 }
+
+//main function calling setup function to setup the pins and other dependencies, then the loop function is called which executes until it is manually stopped in order to make the device work all
+//the time
 int  main(void) {
 	setup();
 	while(1) loop();
 }
-
