@@ -1,5 +1,5 @@
-Arduino program to fetch the location data from the ublox gps module and send it from on lora node to other, with specifed address. Added interrupt button, to send the message 
-when the button is clicked, the button click toggles between sending and receiving mode. Added errorchecking by comparing the legth, all the dependencies used are opensource.
+/*Arduino program to fetch the location data from the ublox gps module and send it from on lora node to other, with specifed address. Added interrupt button, to send the message */
+/*when the button is clicked, the button click toggles between sending and receiving mode. Added errorchecking by comparing the legth, all the dependencies used are opensource.*/
 
 #include <TinyGPS++.h>        // include TinyGPS++ library
 #include <TimeLib.h>          // include Arduino time library
@@ -196,9 +196,7 @@ int displayInfo() {
 			}
 			else
 			{
-				Serial.println("Location: Not Available");
 				if(millis() - p_time >= gps_interval) {
-					Serial.println("I'm  executing inside if");
 					digitalWrite(blueLED,HIGH);
 					delay(250);
 					digitalWrite(blueLED,LOW);
@@ -216,7 +214,6 @@ int displayInfo() {
 			{
 				Serial.println("Time: Not Avaialable");
 				if(millis() - p_time >= gps_interval) {
-					Serial.println("I'm  executing inside esle if");
 					digitalWrite(redLED,HIGH);
 					delay(250);
 					digitalWrite(redLED,LOW);
@@ -235,7 +232,6 @@ int displayInfo() {
 			{
 				Serial.println("Date: Not Avaialable");
 				if(millis() - p_time >= gps_interval) {
-					Serial.println("I'm  executing inside esle if");
 					digitalWrite(redLED,HIGH);
 					delay(250);
 					digitalWrite(redLED,LOW);
