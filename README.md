@@ -6,7 +6,7 @@ Private repository for SIH
 <h2>Source code</h2>
   <a>https://tinyurl/sesafiles</a>
 
-<h2>video - explaination</h2>
+<h2>video - explanation</h2>
   <a>https://tinyurl/sesavideo</a>
   
 
