@@ -1,3 +1,5 @@
+``` All the libraries used are either opensource or built in, this guide how to install dependencies and run the program ```
+
 # LoRa4Raspi: LoRa for Raspberry Pi
 
 This library is a porting of the LoRa Arduino library developped by Sandeep Mistry to Raspberry Pi
