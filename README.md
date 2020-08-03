@@ -1,6 +1,14 @@
 # RA25_SESA_6
 Private repository for SIH
 
+# Team
+- Harshavardhan B
+- Vignesh P
+- Sandeep M
+- Sai Krishna CH
+- Tejeswini M
+- Sravani M
+
 # Website
 
 Visit our website @ http://sesa6care.000webhostapp.com/
