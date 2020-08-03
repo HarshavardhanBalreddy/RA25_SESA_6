@@ -18,8 +18,9 @@ This library required the WiringPi Library, to install it
 
 
 # Connections and Pin Details
-![alt text](https://github.com/HarshavardhanBalreddy/RA25_SESA_6/blob/master/loraspberry/connections/Connections.png)
-![alt text](https://github.com/HarshavardhanBalreddy/RA25_SESA_6/blob/master/loraspberry/connections/Pin%20Details.png)
+<img src="https://github.com/HarshavardhanBalreddy/RA25_SESA_6/blob/master/loraspberry/connections/Connections.png" alt="Connections" style="width:200px;"/>
+<img src="https://github.com/HarshavardhanBalreddy/RA25_SESA_6/blob/master/loraspberry/connections/Pin%20Details.png" alt="Pin Configuration" style="width:200px;"/>
+
 # usage of this library:
 This library as the same API same the original library  So for more information please look original library.
 
