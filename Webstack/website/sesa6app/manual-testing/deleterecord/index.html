@@ -1,0 +1,506 @@
+<html>
+<head>
+
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		*
+		{
+			font-family: 'Lato', sans-serif;
+		}
+		body{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			background-color:#e8ecf0;
+		}
+		.container{
+			width: 100%;
+			height: 100%;
+		}
+		.left-container{
+			height: 100%;
+			width: 4rem;
+			background-color: white;
+			z-index: 3;
+			position: absolute;
+			left: 0;
+			top: 0;
+			box-shadow: 0px 3px 6px rgb(181, 180, 176);
+			border-radius: 0px 12px 12px 0px;
+			position:fixed;
+			z-index:12;
+			background-color:#e8ecf0;
+  			box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255, 255, 255);
+  			transition: 0.5s;
+		}
+		.left-container:hover{
+			width: 19rem;
+		}
+		.left-container:hover < .element.home,.element.history,.element.info{
+			display:inline-flex;
+			flex-direction:column;
+			width:100%;
+		}
+		.top-container{
+			width: 100%;
+			height:4rem;
+			background-color: white;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1s;
+			box-shadow: 0px 3px 6px rgba(193,192,188,0.3);
+			position:fixed;
+			z-index:5;
+			background-color:#e8ecf0;
+  			box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255, 255, 255);
+
+		}
+		.element.logo {
+    		height: 5rem;
+   		width: 100%;
+    		padding: 8px;
+    		padding-bottom: 0;
+		}
+
+		img.brandlogo-img {
+    		width: 48px;
+    		height: 68px;
+		}
+		hr{
+			width: 48px;
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+		hr{
+			width: 57%;
+		}		
+
+		img.menu-img {
+    		width: 2.5rem;
+		}
+
+		.element.home {
+    		padding-left: 12px;
+    		padding-top: 13px;
+		display:inline-flex;
+		width:100%;
+		}
+
+		img.settings-img {
+    		width: 3.2rem;
+		}
+
+		.element.history {
+    		padding-left: 4px;
+   		padding-top: 19px;
+		display:inline-flex;
+		}
+
+		.element-area {
+   			width: 100%;
+    		min-height: 100%;
+		}
+
+		.elementrec {
+   			width: 99%;
+    		height: 5rem;
+    		margin:22px;
+    		border-radius: 12px;
+    		box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+    		display: grid;
+    		grid-template-columns: 14% 8% 14% 8% 8% 15% 15% 8% 3% 2%;
+    		grid-gap: 10px;
+    		justify-content: center;
+    		align-items: center;
+		background-color:#e8ecf0;
+  		box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255, 255, 255);
+  		position: relative;
+		}
+		.elementrec.header {
+    			height: 3rem;
+		}
+		.elementrec:hover
+		    {
+			box-shadow:0px 0px 12px rgba(0,0,0,0.3);
+			cursor:pointer;
+		    }
+
+		.elementrec:first-child{
+			margin-bottom: 5px;
+			height:3rem;
+		}
+
+		.elementrec:nth-child(2) {
+    		margin-top: 12px;
+		}
+		.dep{
+			width: 100%
+			height:35px;
+		}
+		.ele
+		    {
+			align-self:center;
+			justify-self:center;
+		    }
+		img.img-icon
+		    {
+			width:3rem;
+		    }
+		img.nav-button
+		    {
+    			position: absolute;
+   			width: 8rem;
+    			top: 21%;
+    			left: 9%;
+			background-color: #e8ecf0;
+			border-radius:35px;
+			box-shadow: 3px 3px 5px rgb(163,177,198,0.3), -3px -3px 5px rgba(255, 255, 255);
+		    }
+		img.nav-button:hover
+		    {
+			cursor:pointer;
+			box-shadow: 2px 2px 5px rgb(163,177,198,0.2), -2px -2px 5px rgba(255, 255, 255);
+		    }
+		.menu-img
+		    {
+			 filter: invert(2%) sepia(93%) saturate(2364%) hue-rotate(245deg) brightness(91%) contrast(15%);
+		    }
+		.settings-img
+		    {
+		    	filter: invert(37%) sepia(93%) saturate(7471%) hue-rotate(356deg) brightness(91%) contrast(135%);
+		    }
+		img.menu-img:hover
+		    {
+			width:2.8rem;
+			cursor:pointer;
+			filter: invert(35%) sepia(93%) saturate(6364%) hue-rotate(356deg) brightness(91%) contrast(35%);
+		    }
+		img.settings-img:hover
+		    {
+			width:3.5rem;
+			cursor:pointer;
+		    }
+		.icon-dep
+		    {
+			width:3rem;
+		    }
+		.location-pointer
+		    {
+			width:2rem;
+		    }
+		h2 
+		    {
+    			font-size: 25px;
+    			color: #929191;
+    			padding-left: 2rem;
+		    }
+		span.content-rec
+		    {
+    			font-size: 42%;
+    			padding: 3px;
+    			padding-left: 12px;
+    			padding-right: 12px;
+    			margin-left: 8px;
+    			color: white;
+    			background-color: red;
+    			border-radius: 2rem;
+		    }
+		.icon-menu-header{
+			display:none;
+			padding-left:5rem;
+		}
+		.icon-settings-header {
+			display:none;
+    			padding-left: 4.7rem;
+		}
+		.brandlog {
+    			display: block;
+    			position: absolute;
+		}
+
+		img.brandlogo-img-cir {
+    			width: 2.5rem;
+    position: absolute;
+    top: 18px;
+    left: 4px;
+animation: bralog;
+    			animation-duration: 0.2s;
+    			animation-timing-function: linear;
+    			animation-iteration-count: infinite;
+		}
+
+	img.brandlogo-img-cir:hover {
+    			animation: bralog;
+    			animation-duration: 2s;
+    			animation-timing-function: linear;
+    			animation-iteration-count: infinite;
+		}
+
+		@keyframes bralog{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+
+		img.brandlogo-img-rectan {
+    			    width: 2.5rem;
+    position: absolute;
+    top: -8px;
+    z-index: -2;
+		}
+		
+		button.firl {
+    border-radius: 25px;
+    width: 3cm;
+    height: 2rem;
+    border: none;
+    background-color: #e8ecf0;
+    position: absolute;
+    top: 25px;
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255, 255, 255);
+    right: 25px;
+}
+
+button.firl:hover{
+	box-shadow: 2px 2px 3px rgb(163,177,198,0.6), -2px -2px 3px rgba(255, 255, 255);
+	cursor:pointer;
+}
+
+button.button-header {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #e8ecf0;
+    display:flex;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ele.header {
+    height: 100%;
+}
+
+img.ua {
+    width: 0.7rem;
+    height: 0.7rem;
+    padding: 2px;
+}
+
+img.uda {
+    width: 0.7rem;
+    height: 0.7rem;
+    padding: 2px;
+    display:none;
+}
+
+img.uaicon {
+    width: 0.7rem;
+    height: 0.7rem;
+    padding: 2px;
+    opacity: 0;
+    display:none;
+}
+
+.imgdiv {
+    display: flex;
+    flex-direction: column;
+    padding-left: 7px;
+    height: 100%;
+}
+
+.ele label{
+	font-weight: bold;
+}
+
+.ele.header label{
+	font-weight: bold;
+}
+
+b {
+    justify-self: center;
+    align-self: center;
+}
+
+.ele.location button {
+    border: none;
+    background-color: #e8ecf0;
+    z-index: 5;
+    cursor: pointer;
+}
+
+input{
+	display: none;
+}
+form
+{
+	align-self: center;
+	justify-self:center;
+	margin: 0;
+}
+
+.load-container{
+			width: 100%;
+			height:5px;
+			background-color: red;
+			position: absolute;
+			top: 4rem;
+			animation: barlo;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			position: fixed;
+			z-index: 5;
+		}
+
+		@keyframes barlo{
+			0%{
+				left:-100%;
+			}
+			100%{
+				left:100%;
+			}
+		}
+
+.icon-dep.alimg{
+	opacity: 0;
+}
+
+.uaicon-veh-type,.uaiconowner-name,.uaiconveh-id,.uaiconsev,.uaiconts,.uaicondep,.uaiconlocation,.uaicondeviceid{
+ 	width: 0.7rem;
+    height: 0.7rem;
+    padding: 2px;
+    opacity: 0
+}
+.element-area-container{
+	width: 88%;
+    min-height: 81%;
+    position: absolute;
+    top: 14%;
+    left: 7%;
+}
+.ele.updatereport {
+    background-color: #00ff00;
+    width: 5rem;
+    height: 20%;
+    border-bottom-left-radius: 13px;
+    border-top-right-radius: 13px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.ats {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.cameraicon{
+	width: 25px;
+}
+
+.cameraicon img{
+	width: 2rem;
+}
+
+.ele.updatereport.red {
+    background-color: red;
+}
+
+.ele.updatereport.org {
+    background-color: orange;
+}
+
+button.tmd {
+    background: red;
+    width: 5rem;
+    border-radius: 17px;
+}
+
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+			<div class="left-container">
+				<a href="index.html">
+					<div class="element logo">
+					<div class="brandlog">
+					<img class="brandlogo-img-cir" src = "logo t.svg"/>
+					<img class="brandlogo-img-rectan" src = "logo rectan.svg"/>
+					<span class="brandlogo-header"></span>
+					</div>
+				</div>
+				</a>
+				<hr>
+				<a href="index.html">
+					<div class="element home">
+					<img class="icon menu-img" src="menu.svg"/>
+					<span class="icon-menu-header"><H3>Home</H3></span>
+					</div>
+				</a>
+				<div class="element info">
+				</div>
+			</div>
+			<div class="top-container">
+				<a href="index.html"><img class="nav-button" src="nav-button-home-light-svg.svg"/></a>
+			</div>
+			<div class="load-container">
+				<div class="load-icon">
+				</div>
+			</div>
+			<div class = "element-area-container">
+			<div class="element-area">
+
+			</div>
+		</div>
+
+
+	</div>
+	<script src="jquery-3.4.1.slim.min.js"></script>
+	<script src="jquery-3.5.0.js"></script>
+	<script>
+    $(document).ready(function(){
+        function getData(){
+            $.ajax({
+                type: 'POST',
+                url: 'data.php',
+                success: function(data){
+                    $('.element-area-container').html(data);
+                }
+            });
+        }
+        getData();
+       	setInterval(function () {
+            getData(); 
+        }, 1000);  // it will refresh your data every 1 sec
+    });
+	</script>
+	<script>
+        function tmd(DeviceID,Timestamp_date,Timestamp_time){
+        	var DeviceID =DeviceID;
+        	var Timestamp_date = Timestamp_date;
+        	var Timestamp_time = Timestamp_time;
+            $.ajax({
+                type: 'POST',
+                url: 'tmpagedt.php',
+                data: {'DeviceID' : DeviceID, 'Timestamp_date' : Timestamp_date, 'Timestamp_time' : Timestamp_time},
+                success: function(data){
+                    $('.element-area-container').html(data);
+                }
+            });
+        }  // it will refresh your data every 1 sec
+	</script>
+</body>
+</html>
