@@ -4,10 +4,10 @@ Private repository for SIH
   https://sesa6care.000webhostapp.com
 
 <h2>Source code</h2>
-  https://tinyurl/sesafiles
+  <a>https://tinyurl/sesafiles</a>
 
 <h2>video - explaination</h2>
-  https://tinyurl/sesavideo
+  <a>https://tinyurl/sesavideo</a>
   
 
 
