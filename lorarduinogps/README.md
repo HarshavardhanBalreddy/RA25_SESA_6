@@ -1,5 +1,5 @@
-``` All the libraries or dependecies used are either opensource or built in, add the dependencies in to the libraries folder in "Arduino Directory" and paste the program directly in "Arduino 
-Directory", run the programs in arduino IDE or use command line to run and test the programs ```
+``` All the libraries or dependecies used are either opensource or built in, add the dependencies in to the libraries folder in \"Arduino Directoryo\" and paste the program directly in \"Arduino 
+Directory\", run the programs in arduino IDE or use command line to run and test the programs ```
 
 # Pin Configuration for arduino uno
 
